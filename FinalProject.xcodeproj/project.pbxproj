@@ -21,6 +21,7 @@
 		79A0511C27660DD900B8E03A /* PhotoDto.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79A0511B27660DD900B8E03A /* PhotoDto.swift */; };
 		79A0511E27660E8F00B8E03A /* UserDto.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79A0511D27660E8F00B8E03A /* UserDto.swift */; };
 		79A051202766116200B8E03A /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79A0511F2766116200B8E03A /* ViewModel.swift */; };
+		79A0512227661E9B00B8E03A /* SearchPhotoDto.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79A0512127661E9B00B8E03A /* SearchPhotoDto.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +39,7 @@
 		79A0511B27660DD900B8E03A /* PhotoDto.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoDto.swift; sourceTree = "<group>"; };
 		79A0511D27660E8F00B8E03A /* UserDto.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDto.swift; sourceTree = "<group>"; };
 		79A0511F2766116200B8E03A /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
+		79A0512127661E9B00B8E03A /* SearchPhotoDto.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchPhotoDto.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -132,6 +134,7 @@
 			children = (
 				79A0511B27660DD900B8E03A /* PhotoDto.swift */,
 				79A0511D27660E8F00B8E03A /* UserDto.swift */,
+				79A0512127661E9B00B8E03A /* SearchPhotoDto.swift */,
 			);
 			path = Dto;
 			sourceTree = "<group>";
@@ -219,6 +222,7 @@
 				79A0511E27660E8F00B8E03A /* UserDto.swift in Sources */,
 				79A0511C27660DD900B8E03A /* PhotoDto.swift in Sources */,
 				79A0510A276603D800B8E03A /* UnsplashApi.swift in Sources */,
+				79A0512227661E9B00B8E03A /* SearchPhotoDto.swift in Sources */,
 				79A051192766076B00B8E03A /* Config.swift in Sources */,
 				79A050FC276601FE00B8E03A /* ContentView.swift in Sources */,
 				79A0510F276603FA00B8E03A /* User.swift in Sources */,

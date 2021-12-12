@@ -14,7 +14,8 @@ class ViewModel: ObservableObject {
 
     private var isLoading = false
     private var currentPage = 0
-    private var keyword = ""
+    private var lastKeyword = ""
+    @Published var keyword = ""
 
     @Published var photos: [Photo] = []
 
@@ -22,7 +23,10 @@ class ViewModel: ObservableObject {
         UnsplashClient.shared.getPhotos(page: currentPage)
             .receive(on: RunLoop.main)
             .sink(
-                receiveCompletion: { _ in self.isLoading = false },
+                receiveCompletion: { error in
+                    self.isLoading = false
+                    print(error)
+                },
                 receiveValue: { [weak self] photos in
                     guard let self = self else { return }
                     self.isLoading = false
@@ -37,7 +41,10 @@ class ViewModel: ObservableObject {
         UnsplashClient.shared.searchPhotos(query: query, page: currentPage)
             .receive(on: RunLoop.main)
             .sink(
-                receiveCompletion: { _ in self.isLoading = false },
+                receiveCompletion: { error in
+                    self.isLoading = false
+                    print(error)
+                },
                 receiveValue: { [weak self] photos in
                     guard let self = self else { return }
                     self.isLoading = false
@@ -48,24 +55,24 @@ class ViewModel: ObservableObject {
             .store(in: &cancellables)
     }
 
-    func searchPhotos(query: String) {
+    func searchPhotos() {
         if isLoading { return }
         isLoading = true
-        if query != keyword {
+        if lastKeyword != keyword {
             currentPage = 0
             photos = []
         }
-        keyword = query
+        lastKeyword = keyword
         if (keyword == "") {
             fetchPhotos()
         } else {
-            fetchSearchPhotos(query: query)
+            fetchSearchPhotos(query: keyword)
         }
     }
 
     func loadMore(index: Int) {
         if (index > photos.count - 6) {
-            searchPhotos(query: keyword)
+            searchPhotos()
         }
     }
 }

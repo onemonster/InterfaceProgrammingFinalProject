@@ -24,9 +24,9 @@ class UnsplashClient {
 
     func searchPhotos(query: String, page: Int) -> AnyPublisher<[Photo], AFError> {
         return AF.request(UnsplashApi.searchPhotos(query: query, page: page))
-            .publishDecodable(type: [PhotoDto].self)
+            .publishDecodable(type: SearchPhotoDto.self)
             .value()
-            .map { $0.compactMap { dto in dto.toModel() } }
+            .map { $0.results.compactMap { dto in dto.toModel() } }
             .eraseToAnyPublisher()
     }
 }

@@ -8,25 +8,30 @@
 import SwiftUI
 
 struct ContentView: View {
-
+    
     @StateObject var viewModel = ViewModel()
-
+    
     let columns = [
         GridItem(spacing: 10),
         GridItem(),
     ]
-
+    
     var body: some View {
-        ScrollView {
-            LazyVGrid(columns: columns, spacing: 5.0) {
-                ForEach(Array(viewModel.photos.enumerated()), id: \.0) { (index, photo) in
-                    AsyncImage(url: URL(string: photo.thumbnailUrl))
-                        .onAppear(perform: {
-                            viewModel.loadMore(index: index)
-                        })
+        VStack {
+            TextField("Search here", text: $viewModel.keyword, onCommit: {
+                viewModel.searchPhotos()
+            })
+            ScrollView {
+                LazyVGrid(columns: columns, spacing: 5.0) {
+                    ForEach(Array(viewModel.photos.enumerated()), id: \.0) { (index, photo) in
+                        AsyncImage(url: URL(string: photo.thumbnailUrl))
+                            .onAppear(perform: {
+                                viewModel.loadMore(index: index)
+                            })
+                    }
                 }
-            }
-        }.onAppear(perform: { viewModel.searchPhotos(query: "") })
+            }.onAppear(perform: { viewModel.searchPhotos() })
+        }
     }
 }
 
