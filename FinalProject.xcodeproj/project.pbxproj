@@ -22,6 +22,10 @@
 		79A0511E27660E8F00B8E03A /* UserDto.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79A0511D27660E8F00B8E03A /* UserDto.swift */; };
 		79A051202766116200B8E03A /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79A0511F2766116200B8E03A /* ViewModel.swift */; };
 		79A0512227661E9B00B8E03A /* SearchPhotoDto.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79A0512127661E9B00B8E03A /* SearchPhotoDto.swift */; };
+		FC08575A276762D800C0C5C8 /* NotoSansKR-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = FC085759276762D800C0C5C8 /* NotoSansKR-Bold.otf */; };
+		FC4D61812767FC9600732FFA /* NotoSansKR-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = FC4D61802767FC9600732FFA /* NotoSansKR-Medium.otf */; };
+		FC4D6183276817A300732FFA /* PhotoInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC4D6182276817A300732FFA /* PhotoInfoView.swift */; };
+		FC4D618527681E1D00732FFA /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC4D618427681E1D00732FFA /* Constants.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +44,11 @@
 		79A0511D27660E8F00B8E03A /* UserDto.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDto.swift; sourceTree = "<group>"; };
 		79A0511F2766116200B8E03A /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
 		79A0512127661E9B00B8E03A /* SearchPhotoDto.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchPhotoDto.swift; sourceTree = "<group>"; };
+		FC085759276762D800C0C5C8 /* NotoSansKR-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NotoSansKR-Bold.otf"; sourceTree = "<group>"; };
+		FC08575B2767648D00C0C5C8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		FC4D61802767FC9600732FFA /* NotoSansKR-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NotoSansKR-Medium.otf"; sourceTree = "<group>"; };
+		FC4D6182276817A300732FFA /* PhotoInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoInfoView.swift; sourceTree = "<group>"; };
+		FC4D618427681E1D00732FFA /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -73,12 +82,14 @@
 		79A050F8276601FE00B8E03A /* FinalProject */ = {
 			isa = PBXGroup;
 			children = (
+				FC08575B2767648D00C0C5C8 /* Info.plist */,
 				79A051152766065200B8E03A /* Config */,
 				79A0510D276603EE00B8E03A /* Model */,
 				79A05108276603A300B8E03A /* View */,
 				79A051072766039B00B8E03A /* Network */,
 				79A050F9276601FE00B8E03A /* FinalProjectApp.swift */,
 				79A050FD2766020200B8E03A /* Assets.xcassets */,
+				FC4D617F2767828E00732FFA /* Fonts */,
 				79A050FF2766020200B8E03A /* Preview Content */,
 			);
 			path = FinalProject;
@@ -107,6 +118,7 @@
 			children = (
 				79A050FB276601FE00B8E03A /* ContentView.swift */,
 				79A0511F2766116200B8E03A /* ViewModel.swift */,
+				FC4D6182276817A300732FFA /* PhotoInfoView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -116,6 +128,7 @@
 			children = (
 				79A0510E276603FA00B8E03A /* User.swift */,
 				79A051102766040500B8E03A /* Photo.swift */,
+				FC4D618427681E1D00732FFA /* Constants.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -137,6 +150,15 @@
 				79A0512127661E9B00B8E03A /* SearchPhotoDto.swift */,
 			);
 			path = Dto;
+			sourceTree = "<group>";
+		};
+		FC4D617F2767828E00732FFA /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				FC4D61802767FC9600732FFA /* NotoSansKR-Medium.otf */,
+				FC085759276762D800C0C5C8 /* NotoSansKR-Bold.otf */,
+			);
+			path = Fonts;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -205,6 +227,8 @@
 			files = (
 				79A051012766020200B8E03A /* Preview Assets.xcassets in Resources */,
 				79A051172766066700B8E03A /* Config.plist in Resources */,
+				FC4D61812767FC9600732FFA /* NotoSansKR-Medium.otf in Resources */,
+				FC08575A276762D800C0C5C8 /* NotoSansKR-Bold.otf in Resources */,
 				79A050FE2766020200B8E03A /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -223,10 +247,12 @@
 				79A0511C27660DD900B8E03A /* PhotoDto.swift in Sources */,
 				79A0510A276603D800B8E03A /* UnsplashApi.swift in Sources */,
 				79A0512227661E9B00B8E03A /* SearchPhotoDto.swift in Sources */,
+				FC4D618527681E1D00732FFA /* Constants.swift in Sources */,
 				79A051192766076B00B8E03A /* Config.swift in Sources */,
 				79A050FC276601FE00B8E03A /* ContentView.swift in Sources */,
 				79A0510F276603FA00B8E03A /* User.swift in Sources */,
 				79A050FA276601FE00B8E03A /* FinalProjectApp.swift in Sources */,
+				FC4D6183276817A300732FFA /* PhotoInfoView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -359,6 +385,7 @@
 				DEVELOPMENT_ASSET_PATHS = "\"FinalProject/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = FinalProject/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -387,6 +414,7 @@
 				DEVELOPMENT_ASSET_PATHS = "\"FinalProject/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = FinalProject/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
