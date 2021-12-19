@@ -7,6 +7,7 @@
 
 import Foundation
 import Combine
+import UIKit
 
 class ViewModel: ObservableObject {
 
@@ -83,4 +84,11 @@ class ViewModel: ObservableObject {
             searchPhotos()
         }
     }
+    
+
+
+    
+    
+    
+    
 }
