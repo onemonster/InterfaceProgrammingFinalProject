@@ -8,21 +8,13 @@
 import SwiftUI
 
 struct ContentView: View {
-<<<<<<< HEAD
-    @State var photoUrl = ""
-=======
-
->>>>>>> merged
+   
     @StateObject var viewModel = ViewModel()
-    @State var photoIsShowing = false
     
     
+
     
-    
-    let columns = [
-        GridItem(spacing: 10),
-        GridItem(),
-    ]
+   
     
     var body: some View {
         VStack {
@@ -45,54 +37,6 @@ struct SearchBarView : View {
             TextField("Search here", text: $viewModel.keyword, onCommit: {
                 viewModel.searchPhotos()
             })
-<<<<<<< HEAD
-            
-            
-                ScrollView {
-                    LazyVGrid(columns: columns, spacing: 5.0) {
-                        
-                            ForEach(Array(viewModel.photos.enumerated()), id: \.0) { (index, photo) in
-                                Button(action: {
-                                    photoIsShowing = true
-//                                    photoId = photo.id
-                                    photoUrl = photo.regularUrl
-                                }){
-                                        AsyncImage(url: URL(string: photo.thumbnailUrl))
-                                        .onAppear(perform: {
-                                            viewModel.loadMore(index: index)
-                                        })
-                                    
-                                }
-                                .sheet(isPresented: $photoIsShowing) {} content: {
-                                    AsyncImage(url: URL(string: photoUrl)){ phase in
-                                        switch phase {
-                                        case .empty:
-                                            ProgressView()
-                                        case .success(let image):
-                                            image.resizable()
-                                                 .aspectRatio(contentMode: .fit)
-                                        case .failure:
-                                            Image(systemName: "photo")
-                                        @unknown default:
-
-                                            EmptyView()
-                                        }
-                                    }
-
-
-                                }
-                                
-                                
-                            }
-                            
-                        
-                        }
-                        
-                    
-                }.onAppear(perform: { viewModel.searchPhotos() })
-                
-            
-=======
                 .font(Font.custom("NotoSansKR-Bold", size: 15.0))
             Button(action: {
                 viewModel.searchPhotos()
@@ -174,7 +118,6 @@ struct GridView : View {
                 }
                 
             }.onAppear(perform: { viewModel.searchPhotos() })
->>>>>>> merged
         }
         
     }
@@ -188,10 +131,6 @@ struct ContentView_Previews: PreviewProvider {
     }
 }
 
-<<<<<<< HEAD
-
-=======
->>>>>>> merged
 extension View{
     func getRect()->CGRect{
         return UIScreen.main.bounds

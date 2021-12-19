@@ -14,12 +14,6 @@ struct ImageView: View {
         ZStack {
             Color.black
             
-
-
-
-
-
-            
         }
     }
 }
