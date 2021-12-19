@@ -15,7 +15,7 @@ struct PhotoDto: Codable {
 
 extension PhotoDto {
     func toModel() -> Photo {
-        let user = User(id: self.user.id, name: self.user.name, location: self.user.location, profileImageUrl: "")
+        let user = User(id: self.user.id, name: self.user.name, location: self.user.location, profileImageUrl: self.user.profile_image.small)
         return Photo(id: self.id, user: user, thumbnailUrl: self.urls.thumb, regularUrl: self.urls.regular)
     }
 }
