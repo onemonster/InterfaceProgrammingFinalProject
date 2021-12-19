@@ -8,9 +8,15 @@
 import SwiftUI
 
 struct ContentView: View {
-    
-    @StateObject var viewModel = ViewModel()
 
+    @StateObject var viewModel = ViewModel()
+    
+    
+    let columns = [
+        GridItem(spacing: 10),
+        GridItem(),
+    ]
+    
     var body: some View {
         VStack {
             SearchBarView(viewModel: viewModel)
@@ -52,7 +58,8 @@ struct SearchBarView : View {
 
 
 struct GridView : View {
-    
+    @State var photoUrl = ""
+    @State var photoIsShowing = false
     @ObservedObject var viewModel : ViewModel
     
     let columns = [
@@ -63,6 +70,11 @@ struct GridView : View {
     var body: some View {
         LazyVGrid(columns: columns, spacing: 10.0) {
             ForEach(Array(viewModel.photos.enumerated()), id: \.0) { (index, photo) in
+                Button(action: {
+                    photoIsShowing = true
+//                   photoId = photo.id
+                    photoUrl = photo.regularUrl
+                }){
                 AsyncImage(url: URL(string: photo.thumbnailUrl)) { image in
                     image
                         .resizable(resizingMode : .tile)
@@ -86,7 +98,27 @@ struct GridView : View {
                 .onAppear(perform: {
                     viewModel.loadMore(index: index)
                 })
-            }
+                }
+                .sheet(isPresented: $photoIsShowing) {} content: {
+                    AsyncImage(url: URL(string: photoUrl)){ phase in
+                        switch phase {
+                        case .empty:
+                            ProgressView()
+                        case .success(let image):
+                            image.resizable()
+                                 .aspectRatio(contentMode: .fit)
+                        case .failure:
+                            Image(systemName: "photo")
+                        @unknown default:
+
+                            EmptyView()
+                        }
+                    }
+
+
+                }
+                
+            }.onAppear(perform: { viewModel.searchPhotos() })
         }
         
     }
@@ -97,5 +129,11 @@ struct GridView : View {
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         ContentView()
+    }
+}
+
+extension View{
+    func getRect()->CGRect{
+        return UIScreen.main.bounds
     }
 }

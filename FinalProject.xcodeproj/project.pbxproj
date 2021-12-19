@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		042DFB2F276ED44A007D9E78 /* ImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 042DFB2E276ED44A007D9E78 /* ImageView.swift */; };
 		79A050FA276601FE00B8E03A /* FinalProjectApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79A050F9276601FE00B8E03A /* FinalProjectApp.swift */; };
 		79A050FC276601FE00B8E03A /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79A050FB276601FE00B8E03A /* ContentView.swift */; };
 		79A050FE2766020200B8E03A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 79A050FD2766020200B8E03A /* Assets.xcassets */; };
@@ -29,6 +30,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		042DFB2E276ED44A007D9E78 /* ImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ImageView.swift; path = ../../../../../Desktop/image/InterfaceProgrammingFinalProject/FinalProject/View/ImageView.swift; sourceTree = "<group>"; };
 		79A050F6276601FE00B8E03A /* FinalProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FinalProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		79A050F9276601FE00B8E03A /* FinalProjectApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinalProjectApp.swift; sourceTree = "<group>"; };
 		79A050FB276601FE00B8E03A /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -117,6 +119,7 @@
 			isa = PBXGroup;
 			children = (
 				79A050FB276601FE00B8E03A /* ContentView.swift */,
+				042DFB2E276ED44A007D9E78 /* ImageView.swift */,
 				79A0511F2766116200B8E03A /* ViewModel.swift */,
 				FC4D6182276817A300732FFA /* PhotoInfoView.swift */,
 			);
@@ -252,6 +255,7 @@
 				79A050FC276601FE00B8E03A /* ContentView.swift in Sources */,
 				79A0510F276603FA00B8E03A /* User.swift in Sources */,
 				79A050FA276601FE00B8E03A /* FinalProjectApp.swift in Sources */,
+				042DFB2F276ED44A007D9E78 /* ImageView.swift in Sources */,
 				FC4D6183276817A300732FFA /* PhotoInfoView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

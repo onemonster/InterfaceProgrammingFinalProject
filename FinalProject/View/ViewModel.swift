@@ -18,6 +18,14 @@ class ViewModel: ObservableObject {
     @Published var keyword = ""
 
     @Published var photos: [Photo] = []
+    @Published var selectedPhotos: [Photo] = []
+    @Published var selectedPhotoID: String = ""
+    
+    
+    
+    private func showPhote() {
+        
+    }
 
     private func fetchPhotos() {
         UnsplashClient.shared.getPhotos(page: currentPage)
