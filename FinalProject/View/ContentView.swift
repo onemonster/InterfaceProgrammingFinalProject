@@ -8,14 +8,11 @@
 import SwiftUI
 
 struct ContentView: View {
-
+  
     @State var photoUrl = ""
     @StateObject var viewModel = ViewModel()
     @State var photoIsShowing = false
-    
-    
-    
-    
+   
     let columns = [
         GridItem(spacing: 10),
         GridItem(),
